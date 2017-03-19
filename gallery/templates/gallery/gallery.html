@@ -1,1 +1,5 @@
-initial creation
+{% load static %}initial creation
+
+{% for filename in filenames %}
+    <img src="{% static 'images/'|add:filename %}">
+{% endfor %}
