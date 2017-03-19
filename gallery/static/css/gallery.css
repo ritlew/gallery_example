@@ -1,0 +1,119 @@
+/* main header */
+#main-title {
+    text-align: center;
+}
+
+/* div for the container for the gallery */
+.gallery {
+	text-align: center;
+	width: 90%;
+	height: 95%;
+	margin: auto;
+}
+
+/* class for the container of a gallery image thumbnail */
+/* just a placeholder */
+.gallery-entry {
+}
+
+/* class for gallery images */
+/* just a placeholder */
+.gallery-image {
+}
+
+/* gallery thumbnails */
+.gallery-thumb {
+	max-width: 33%;
+	min-width: 300px;
+	cursor: pointer;
+}
+
+/* container for the enlarged image viewer */
+.view-wrapper-outer {
+	position: fixed;
+	display: flex;
+	top: 0;
+    left: 0;
+	width: 100vw;
+	height: 100vh;
+	margin: auto;
+	text-align: center;
+	align-items: center;
+}
+
+/* This class turns off the container (used when no images is being viewed */
+.view-wrapper-outer-off {
+	display: none;
+}
+
+/* inside of the wrapper to center the other divs */
+.view-wrapper-inner {
+	display: inline-flex;
+	vertical-align: middle;
+	margin: auto auto;
+}
+
+/* row for the left arrow, picture, and right arrow divs*/
+.view-wrapper-table {
+	display: table-row;
+	text-align: center;
+}
+
+ /* wrapper for the elements inside the row */
+.arrow-wrapper-outer {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* gallery enlarged images */
+.gallery-full {
+	display: block;
+	opacity: 1.0;
+    max-width: 100%;
+	max-height: 95vh;
+}
+
+/* when the arrow is displayed */
+.arrow-on {
+	opacity: .5;
+	cursor: pointer;
+}
+
+/* brighten up when the arrow is hovered over */
+.arrow-on:hover {
+	opacity: 1.0;
+	transition: opacity .2s ease-out;
+	-moz-transition: opacity .2s ease-out;
+	-webkit-transition: opacity .2s ease-out;
+	-o-transition: opacity .2s ease-out;
+}
+
+/* This is used when there is no picture in the direction the arrow is pointing */
+.arrow-hide {
+	visibility: hidden;
+}
+
+/* when the arrows are not being displayed (no picture is being viewed) */
+.arrow-off {
+	width: 0;
+	height: 0;
+}
+
+/* turns off the overlay */
+.gallery-overlay-off {
+	opacity: 0;
+}
+
+/* grey overlay */
+.gallery-overlay-on {
+	opacity: 0.85;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}

@@ -1,5 +1,55 @@
-{% load static %}initial creation
-
-{% for filename in filenames %}
-    <img src="{% static 'images/'|add:filename %}">
-{% endfor %}
+{% load static %}
+<html>
+    <head>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/gallery.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    </head>
+    <body>
+        <header class="header">
+                <h1 id="main-title">Photo Gallery</h1>
+        </header>
+        {# this div will change once an image is clicked #}
+        {# it will create a grey background for an enlarged picture #}
+        {# see the js for when this happens #}
+        <div id="overlay" class="gallery-overlay-off"></div>
+        <div class="view-wrapper-outer-off" id="view-wrapper-outer">
+            {# Inner wrapper for the row of elements #}
+            {# Used to detect when the user clicks away from the picture #}
+            <div id="view-wrapper-inner">
+                {# Wrapper to organize the two arrows and image #}
+                <div id="view-wrapper-table" class="view-wrapper-table">
+                    {# Wrapper for the arrow #}
+                    <div id="arrow-wrapper-left" class="arrow-wrapper-outer">
+                        <img id="arrow-left" class="arrow-off arrow-left" src="{% static 'images/arrow-left.png' %}">
+                    </div>
+                    {# placeholder for an enlarged image #}
+                    {# the src changes to the proper picture once one is clicked in the gallery #}
+                    {# see the js for how this happens #}
+                    <div id="arrow-wrapper-outer" class="arrow-wrapper-outer">
+                        <img id="full-image" class="gallery-full" src="">
+                    </div>
+                    {# Wrapper for the arrow #}
+                    <div id="arrow-wrapper-right" class="arrow-wrapper-outer">
+                        <img id="arrow-right" class="arrow-off arrow-right" src="{% static 'images/arrow-right.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gallery" class="gallery">
+            {# every image in /static/images #}
+            {% for filename in filenames %}
+                {# container for the thumbnail #}
+                <span class="gallery-entry">
+                    {# actual thumbnail #}
+                    {# the id is a counter from 1 to (number of pictures). It isn't used but it's there #}
+                    <img class="gallery-image gallery-thumb" id="{{ forloop.counter }}" src="{% static 'images/'|add:filename %}">
+                </span>
+            {% endfor %}
+            {# These load in the full images so they aren't loaded in on-the-fly when the user clicks #}
+            {% for filename in filenames %}
+                <img style="display: none;" src="{% static 'gallery/images/'|add:filename %}">
+            {% endfor %}
+        </div>
+    </body>
+</html>
