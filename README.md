@@ -1,6 +1,11 @@
 # gallery_example
 Small django project to show a gallery example. 
 
+Here are the relevant files:
+- [JavaScript/Jquery](gallery/static/js/gallery.js)
+- [CSS](gallery/static/css/gallery.css)
+- [HTML (Django Template)](gallery/templates/gallery/gallery.html)
+
 Made with Django, Python, HTML, CSS, JavaScript, and Jquery. This Django website displays an array of photos using HTML and CSS:
 
 [mainpage]: http://i.imgur.com/bZEE32Y.jpg "Main page"
